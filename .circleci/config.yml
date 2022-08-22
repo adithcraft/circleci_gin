@@ -4,7 +4,6 @@ executors:
   environment:
     docker:
       - image: golang:1.18
-    working_directory: github.com/adithcraft/circleci_gin
 
 jobs:
   test:
