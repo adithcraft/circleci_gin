@@ -1,4 +1,4 @@
-module circleci_gin
+module github.com/adithcraft/circleci_gin
 
 go 1.18
 
