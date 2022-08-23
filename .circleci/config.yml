@@ -6,9 +6,6 @@ executors:
       IMAGE_NAME: circleci_gin
     docker:
       - image: golang:1.18
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
 
 jobs:
   test:
