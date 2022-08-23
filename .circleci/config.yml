@@ -9,7 +9,6 @@ executors:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-    working_directory: /go/src/github.com/adithcraft/circleci_gin
 
 jobs:
   test:
