@@ -54,6 +54,7 @@ jobs:
       - run:
           name: Deploy with Docker Compose
           command: |
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
             ssh -oStrictHostKeyChecking=no ec2-user@3.104.2.203 "docker-compose pull && docker-compose up -d"
 
 workflows:
