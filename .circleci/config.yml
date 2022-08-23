@@ -5,7 +5,7 @@ executors:
     environment:      
       IMAGE_NAME: circleci_gin
     docker:
-      - image: golang:1.18
+      - image: circleci/golang:1.18
 
 jobs:
   test:
