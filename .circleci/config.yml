@@ -3,7 +3,7 @@ version: 2.1
 executors:
   environment:
     environment:
-      IMAGE_NAME: circleci_gin
+      IMAGE_NAME: adithcraft/circleci_gin
     docker:
       - image: cimg/go:1.18
         auth:
