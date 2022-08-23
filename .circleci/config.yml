@@ -2,7 +2,8 @@ version: 2.1
 
 executors:
   environment:
-    IMAGE_NAME: circleci_gin
+    environment:      
+      IMAGE_NAME: circleci_gin
     docker:
       - image: golang:1.18
         auth:
