@@ -2,10 +2,13 @@ version: 2.1
 
 executors:
   environment:
-    environment:      
+    environment:
       IMAGE_NAME: circleci_gin
     docker:
       - image: cimg/go:1.18
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
 
 jobs:
   test:
@@ -30,7 +33,7 @@ jobs:
       - run:
           name: Unit tests
           command: go test -v ./...
-  
+
   build:
     executor: environment
     steps:
@@ -40,9 +43,9 @@ jobs:
       - run:
           name: Publish Image to Docker Hub
           command: |
-              echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-              docker build -t $IMAGE_NAME .
-              docker push $IMAGE_NAME:latest
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker build -t $IMAGE_NAME .
+            docker push $IMAGE_NAME:latest
 
 workflows:
   ci_cd:
