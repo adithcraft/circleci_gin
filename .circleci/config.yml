@@ -51,6 +51,7 @@ jobs:
   deploy:
     executor: environment
     steps:
+      - checkout
       - run:
           name: Deploy with Docker Compose
           command: |
